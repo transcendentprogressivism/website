@@ -21,6 +21,15 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	:root {
+		--accent-color: #529525;
+	}
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--accent-color: #1EED74;
+		}
+	}
+
 	html {
 		font-family: system-ui, sans-serif;
 		background: #f0f0f0;
@@ -31,10 +40,8 @@ const { title } = Astro.props;
 		}
 	}
 
-	@media (prefers-color-scheme: dark) {
-		a {
-			color: #60a1ff;
-		}
+	a {
+		color: var(--accent-color);
 	}
 
 	code {
