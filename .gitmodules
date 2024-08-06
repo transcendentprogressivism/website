@@ -1,0 +1,3 @@
+[submodule "src/pages/manifesto"]
+	path = src/pages/manifesto
+	url = https://github.com/transcendentprogressivism/manifesto.git
