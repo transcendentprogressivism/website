@@ -12,6 +12,11 @@ const toc = generateToc(manifesto.getHeadings())
 	<div class="container">
 		<div class="spacer"></div>
 		<main>
+			<picture class="logo">
+				<source class="logo" srcset="./light-mode-logo.png" media="(prefers-color-scheme: light)" />
+				<source srcset="./dark-mode-logo.png" media="(prefers-color-scheme: dark)" />
+				<img width="100" src="./light-mode-logo.png" />
+			</picture>
 			<manifesto.Content />
 		</main>
 		<aside class="spacer">
@@ -41,6 +46,10 @@ const toc = generateToc(manifesto.getHeadings())
 		main {
 			color: #f0f0f0;
 		}
+	}
+
+	.logo {
+		width: 10rem;
 	}
 
 	.container {
