@@ -9,22 +9,22 @@ const toc = generateToc(manifesto.getHeadings())
 ---
 
 <Layout title="Transcendent Progressivism">
-	<div class="container">
-		<div class="spacer"></div>
-		<main>
-			<picture class="logo">
-				<source class="logo" srcset="./light-mode-logo.png" media="(prefers-color-scheme: light)" />
-				<source srcset="./dark-mode-logo.png" media="(prefers-color-scheme: dark)" />
-				<img width="100" src="./light-mode-logo.png" />
-			</picture>
-			<manifesto.Content />
-		</main>
-		<aside class="spacer">
-			<ul>
-				{toc.map((item) => <TableOfContent heading={item} />)}
-			</ul>
-		</aside>
-	</div>
+    <div class="container">
+        <div class="spacer"></div>
+        <main>
+            <picture class="logo">
+                <source class="logo" srcset="./light-mode-logo.png" media="(prefers-color-scheme: light)" />
+                <source srcset="./dark-mode-logo.png" media="(prefers-color-scheme: dark)" />
+                <img width="100" src="./light-mode-logo.png" alt="Transcendent Progressivism Logo" />
+            </picture>
+            <manifesto.Content />
+        </main>
+        <aside class="spacer">
+            <ul>
+                {toc.map((item) => <TableOfContent heading={item} />)}
+            </ul>
+        </aside>
+    </div>
 </Layout>
 
 <style>
