@@ -1,58 +1,82 @@
 ---
 interface Props {
-	title: string;
+  title: string;
+  description?: string;
+  ogImage?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "The Transcendent Progressivism (t/prog) Manifesto: A Vision for Humanity’s Future",
+  ogImage = "/banner.png",
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="The Transcendent Progressivism (t/prog) Manifesto: A Vision for Humanity’s Future" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="en" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta name="keywords" content="Transcendent Progressivism, technology, decentralized governance, social liberation, sustainable development, autonomy"> <!-- ChatGPT ahh placeholder -->
+    <meta name="author" content="mel (@vmfunc on X, formerly Twitter)" />
+    <link rel="icon" type="image/svg+xml" href={ogImage} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content="https://tprog.tech" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:site" content="@vmfunc" />
+
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent-color: #529525;
-	}
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--accent-color: #1EED74;
-		}
-	}
+  :root {
+    --accent-color: #529525;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --accent-color: #1EED74;
+    }
+  }
 
-	html {
-		font-family: system-ui, sans-serif;
-		background: #f0f0f0;
-	}
-	@media (prefers-color-scheme: dark) {
-		html {
-			background: #13151a;
-		}
-	}
+  html {
+    font-family: system-ui, sans-serif;
+    background: #f0f0f0;
+  }
+  @media (prefers-color-scheme: dark) {
+    html {
+      background: #13151a;
+    }
+  }
 
-	a {
-		color: var(--accent-color);
-	}
+  a {
+    color: var(--accent-color);
+  }
 
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
 </style>
